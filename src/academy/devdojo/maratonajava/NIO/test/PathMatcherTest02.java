@@ -19,8 +19,6 @@ class FindAllTestJavaOrClass extends SimpleFileVisitor<Path>{
     }
 }
 
-
-
 public class PathMatcherTest02 {
     public static void main(String[] args) throws IOException {
         Path path = Paths.get(".");
