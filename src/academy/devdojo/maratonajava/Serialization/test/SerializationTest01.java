@@ -1,8 +1,8 @@
 package academy.devdojo.maratonajava.Serialization.test;
 
 import academy.devdojo.maratonajava.Serialization.dominio.Aluno;
+import academy.devdojo.maratonajava.Serialization.dominio.Turma;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -13,7 +13,11 @@ import java.nio.file.Paths;
 public class SerializationTest01 {
     public static void main(String[] args) {
         Aluno aluno = new Aluno("1001", "Carlos", "Carlos123");
-//        serializar(aluno);
+        Turma turma = new Turma("Maratona Java Virado no Jiraya");
+        // Turma nao esta sendo esterializado, o que esta sendo é a string dela
+        aluno.setTurma(turma);
+
+        serializar(aluno);
         deserializar();
     }
 
