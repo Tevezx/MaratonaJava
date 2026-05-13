@@ -1,5 +1,7 @@
 package academy.devdojo.maratonajava.Colecoes.dominio;
 
+import java.util.StringJoiner;
+
 public class Smartphone {
     private String serialNumber;
     private String marca;
@@ -41,6 +43,14 @@ public class Smartphone {
         // se nao teremos um hashcode 42 representando alex e dirk, assim fazemos o .equals para saber se os valores sao iguais ou nao
         // Se dois objetos sao iguais, eles retornam o mesmo hashcode
         return serialNumber == null ? 0 : this.serialNumber.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", Smartphone.class.getSimpleName() + "[", "]")
+                .add("serialNumber='" + serialNumber + "'")
+                .add("marca='" + marca + "'")
+                .toString();
     }
 
     public String getSerialNumber() {
