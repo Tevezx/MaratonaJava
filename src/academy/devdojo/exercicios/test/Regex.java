@@ -1,4 +1,4 @@
-package academy.devdojo.exercicios;
+package academy.devdojo.exercicios.test;
 
 import java.util.ArrayList;
 import java.util.List;

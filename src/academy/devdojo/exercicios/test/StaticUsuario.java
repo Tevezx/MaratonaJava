@@ -1,4 +1,4 @@
-package academy.devdojo.exercicios;
+package academy.devdojo.exercicios.test;
 
 public class StaticUsuario {
     private String nome;

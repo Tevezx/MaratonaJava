@@ -1,4 +1,4 @@
-package academy.devdojo.exercicios;
+package academy.devdojo.exercicios.test;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;

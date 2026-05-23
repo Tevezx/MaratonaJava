@@ -1,6 +1,4 @@
-package academy.devdojo.exercicios;
-
-import academy.devdojo.maratonajava.Seminario.Dominio.Aluno;
+package academy.devdojo.exercicios.test;
 
 import java.util.ArrayList;
 import java.util.List;
