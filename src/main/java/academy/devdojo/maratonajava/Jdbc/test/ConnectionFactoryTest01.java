@@ -1,7 +1,9 @@
 package academy.devdojo.maratonajava.Jdbc.test;
 
 import academy.devdojo.maratonajava.Jdbc.dominio.Producer;
-import academy.devdojo.maratonajava.Jdbc.repository.ProducerRepository;
+import academy.devdojo.maratonajava.Jdbc.service.ProducerService;
+
+import java.util.List;
 
 public class ConnectionFactoryTest01 {
     public static void main(String[] args) {
@@ -12,6 +14,18 @@ public class ConnectionFactoryTest01 {
                 .builder()
                 .name("Naruto")
                 .build();
-        ProducerRepository.save(producer);
+
+        Producer producertoUpdate = Producer
+                .builder()
+                .id(5)
+                .name("NARUTO")
+                .build();
+
+//        ProducerService.save(producer);
+//        ProducerService.remove(10);
+//        ProducerService.update(producertoUpdate);
+        List<Producer> producers = ProducerService.findAll();
+        System.out.println(producers);
+
     }
 }
