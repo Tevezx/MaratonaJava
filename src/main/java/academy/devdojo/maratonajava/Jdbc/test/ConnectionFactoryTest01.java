@@ -12,7 +12,8 @@ public class ConnectionFactoryTest01 {
 
         Producer producer = Producer
                 .builder()
-                .name("Naruto")
+                .id(15)
+                .name("CARLOS")
                 .build();
 
         Producer producertoUpdate = Producer
@@ -21,11 +22,49 @@ public class ConnectionFactoryTest01 {
                 .name("NARUTO")
                 .build();
 
-//        ProducerService.save(producer);
-//        ProducerService.remove(10);
-//        ProducerService.update(producertoUpdate);
-        List<Producer> producers = ProducerService.findAll();
-        System.out.println(producers);
+        // Salva um producer
+        // ProducerService.save(producer);
+
+        // Deleta um producer pelo id
+        // ProducerService.remove(10);
+
+        // Atualiza um producer criado
+        // ProducerService.update(producertoUpdate);
+
+        // Busca todos os dados
+        // List<Producer> producers = ProducerService.findAll();
+        // System.out.println(producers);
+
+        // Procura pelo nome
+        // List<Producer> producers = ProducerService.finByName("Naruto");
+        // System.out.println(producers);
+
+        // Verifica as minhas tabelas e informações
+        // ProducerService.showProducerMetaData();
+
+        // Verifica o que o banco de dados suporta
+        // ProducerService.showDriverMetaData();
+
+        // Pegando os registros da tabela da tabela producer e alterando simultaneamente no banco de dados
+        // ProducerService.showTypeScrollWorking();
+
+        // Atualizando o todos os nomes Naruto para upperCase no banco de dados
+        // List<Producer> producers = ProducerService.findByNameAndUpdateToUpperCase("Naruto");
+        // System.out.println(producers);
+
+        // Se não existir o nome, insiro na tabela
+        // List<Producer> producers = ProducerService.findByNameAndInsertWhenNotFound("Ana");
+        // System.out.println(producers);
+
+        // Deletando todos os nomes narutos
+        // ProducerService.findByNameAndDelete("Naruto");
+
+        // Evitando sql injection com prepared statement
+        // ProducerService.findByNamePreparedStatement("Carlos");
+
+        // Atualizando o nome do Carlos para CARLOS com update statement (?)
+        // ProducerService.updatePreparedStatement(producer);
+
 
     }
 }
