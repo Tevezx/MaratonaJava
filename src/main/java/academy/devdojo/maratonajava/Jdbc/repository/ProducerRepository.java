@@ -355,8 +355,7 @@ public class ProducerRepository {
     }
 
     // Criando o update do metodo acima
-    private static PreparedStatement updatePreparedStatement(Connection connection, Producer producer) throws
-            SQLException {
+    private static PreparedStatement updatePreparedStatement(Connection connection, Producer producer) throws SQLException {
         String sql = "UPDATE producer SET name_producer = ? WHERE id = ?;";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setString(1, producer.getName());
