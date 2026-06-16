@@ -1,5 +1,6 @@
 package academy.devdojo.maratonajava.crud.domain;
 
+import academy.devdojo.maratonajava.Jdbc.dominio.Producer;
 import lombok.Builder;
 import lombok.Value;
 

@@ -52,8 +52,8 @@ public class ProducerRepository {
     }
 
     public static void remove(Integer id) {
-        try (Connection conn = academy.devdojo.maratonajava.Jdbc.on.ConnectionFactory.getConnection();
-             PreparedStatement preparedStatement = createdPrepareStatementRemove(conn, id)) {
+        try (Connection connection = academy.devdojo.maratonajava.Jdbc.on.ConnectionFactory.getConnection();
+             PreparedStatement preparedStatement = createdPrepareStatementRemove(connection, id)) {
             preparedStatement.execute();
             log.info("Deleted producer '{}' in the databases", id);
         } catch (SQLException e) {
@@ -74,7 +74,7 @@ public class ProducerRepository {
             preparedStatement.execute();
             log.info("Inserted to producer '{}'", name);
         } catch (SQLException e) {
-            log.info("Error while trying to inserted producer '{}'", name);
+            log.error("Error while trying to inserted producer '{}'", name);
         }
     }
 
@@ -92,7 +92,7 @@ public class ProducerRepository {
             preparedStatement.execute();
             log.info("Updated to producer '{}'", producer.getId());
         } catch (SQLException e) {
-            log.info("Error while trying to updated producer '{}'", producer.getId());
+            log.error("Error while trying to updated producer '{}'", producer.getId());
         }
     }
 }

@@ -1,19 +1,18 @@
 package academy.devdojo.maratonajava.crud.service;
 
-import academy.devdojo.maratonajava.crud.domain.Producer;
-import academy.devdojo.maratonajava.crud.repository.ProducerRepository;
+import academy.devdojo.maratonajava.crud.domain.Anime;
+import academy.devdojo.maratonajava.crud.repository.AnimeRepository;
 
 import java.util.Scanner;
 
-public class ProducerService {
+public class AnimeService {
     private static final Scanner SCANNER = new Scanner(System.in);
 
     public static void buildMenu(Integer operacao) {
-        // Utilizando ehanced switchs
         switch (operacao) {
-            case 0 -> System.out.println("Leaving...");
+            case 0 -> System.out.println("leaving...");
             case 1 -> findByName();
-            case 2 -> delete();
+            case 2 -> remove();
             case 3 -> save();
             case 4 -> update();
             default -> throw new IllegalArgumentException("Argument Ilegal, not valid option");
@@ -24,36 +23,37 @@ public class ProducerService {
         System.out.println("Type the name or empty to all:");
         String name = SCANNER.nextLine();
 
-        // Utilizando programacao funcional
-        ProducerRepository.findByName(name).forEach(p -> System.out.printf("ID: [%d] | %s\n", p.getId(), p.getName()));
+        AnimeRepository.findByName(name).forEach(a -> System.out.printf("ID: [%d] | %s\n", a.getId(), a.getName()));
     }
 
-    private static void delete() {
+    private static void remove() {
         System.out.println("Type one of the ids below to delete:");
         int id = Integer.parseInt(SCANNER.nextLine());
 
-        // Tendo certeza que é aquele id que ela quer deletar
         System.out.println("Are you sure? S/N:");
         String choice = SCANNER.nextLine();
 
-        // Verificando se a pessoa digitou S ou N
         if ("s".equalsIgnoreCase(choice)) {
-            ProducerRepository.remove(id);
+            AnimeRepository.remove(id);
         } else {
             throw new IllegalArgumentException("Invalid option");
         }
     }
 
     private static void save() {
-        System.out.println("Enter the producer's name:");
+        System.out.println("Enter the anime's name:");
         String name = SCANNER.nextLine();
+        if (name == null || name.isEmpty()) throw new IllegalArgumentException("Invalid name to producer");
 
-        if (name.isEmpty()) {
-            throw new IllegalArgumentException("The name cannot be null or empty");
-        }
+        System.out.println("Enter the id to producer:");
+        int idProducer = Integer.parseInt(SCANNER.nextLine());
+        if (idProducer < 0) throw new IllegalArgumentException("Id producer invalid");
 
-        System.out.println("Saving producer in the databases...");
-        ProducerRepository.save(name);
+        System.out.println("Enter to number of episodies:");
+        int episodies = Integer.parseInt(SCANNER.nextLine());
+        if (episodies <= 0) throw new IllegalArgumentException("Number of episodies invalid");
+
+        AnimeRepository.save(idProducer, name, episodies);
     }
 
     private static void update() {
@@ -62,19 +62,17 @@ public class ProducerService {
 
         if (id < 0) throw new IllegalArgumentException("Id must be greater than zero");
 
-
         System.out.println("Enter new name:");
         String name = SCANNER.nextLine();
 
         if (name.isEmpty()) throw new IllegalArgumentException("The name cannot be null or empty");
 
-
-        Producer producer = Producer
-                .builder()
+        Anime anime = Anime.
+                builder()
                 .id(id)
                 .name(name)
                 .build();
 
-        ProducerRepository.update(producer);
+        AnimeRepository.update(anime);
     }
 }
