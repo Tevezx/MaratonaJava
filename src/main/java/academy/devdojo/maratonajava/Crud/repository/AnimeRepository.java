@@ -1,7 +1,7 @@
-package academy.devdojo.maratonajava.crud.repository;
+package academy.devdojo.maratonajava.Crud.repository;
 
-import academy.devdojo.maratonajava.crud.conn.ConnectionFactory;
-import academy.devdojo.maratonajava.crud.domain.Anime;
+import academy.devdojo.maratonajava.Crud.conn.ConnectionFactory;
+import academy.devdojo.maratonajava.Crud.domain.Anime;
 import lombok.extern.log4j.Log4j2;
 
 import java.sql.Connection;

@@ -1,4 +1,4 @@
-package academy.devdojo.maratonajava.crud.domain;
+package academy.devdojo.maratonajava.Crud.domain;
 
 import lombok.Builder;
 import lombok.Value;

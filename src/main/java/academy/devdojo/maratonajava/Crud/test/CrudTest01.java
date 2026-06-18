@@ -1,7 +1,7 @@
-package academy.devdojo.maratonajava.crud.test;
+package academy.devdojo.maratonajava.Crud.test;
 
-import academy.devdojo.maratonajava.crud.service.AnimeService;
-import academy.devdojo.maratonajava.crud.service.ProducerService;
+import academy.devdojo.maratonajava.Crud.service.AnimeService;
+import academy.devdojo.maratonajava.Crud.service.ProducerService;
 
 import java.util.Scanner;
 

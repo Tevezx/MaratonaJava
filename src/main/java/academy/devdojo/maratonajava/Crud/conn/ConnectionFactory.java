@@ -1,4 +1,4 @@
-package academy.devdojo.maratonajava.crud.conn;
+package academy.devdojo.maratonajava.Crud.conn;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

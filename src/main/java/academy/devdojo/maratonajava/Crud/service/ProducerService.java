@@ -1,7 +1,7 @@
-package academy.devdojo.maratonajava.crud.service;
+package academy.devdojo.maratonajava.Crud.service;
 
-import academy.devdojo.maratonajava.crud.domain.Producer;
-import academy.devdojo.maratonajava.crud.repository.ProducerRepository;
+import academy.devdojo.maratonajava.Crud.domain.Producer;
+import academy.devdojo.maratonajava.Crud.repository.ProducerRepository;
 
 import java.util.Scanner;
 
